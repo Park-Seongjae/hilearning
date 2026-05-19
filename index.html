@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경기도교육청 하이러닝 연수</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 웹 폰트 (Pretendard) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <!-- 아이콘 (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fbff 0%, #edf4ff 50%, #f0f5ff 100%);
+            /* 배경 장식용 원형 그래픽들을 body 가상요소로 추가 */
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 15%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(206,231,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,235,245,0.6) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-navy {
+            background-color: #1a202c;
+            color: white;
+            transition: all 0.2s;
+        }
+        .btn-navy:hover {
+            background-color: #2d3748;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased text-slate-800">
+
+    <!-- 상단 네비게이션 바 -->
+    <nav class="w-full px-6 py-5 flex justify-between items-center max-w-7xl mx-auto relative z-20">
+        <!-- 로고 영역 (하이러닝 로고 스타일 모방) -->
+        <div class="flex items-center gap-2 cursor-pointer">
+            <div class="w-8 h-8 relative flex items-center justify-center">
+                <!-- 아이콘 형태 모방 -->
+                <div class="absolute w-full h-full bg-cyan-400 rounded-sm transform rotate-45 opacity-20"></div>
+                <div class="absolute w-4 h-6 bg-cyan-500 rounded-sm -ml-2"></div>
+                <div class="absolute w-4 h-6 bg-orange-400 rounded-sm ml-2"></div>
+                <div class="absolute w-1 h-4 bg-white z-10"></div>
+            </div>
+            <span class="text-xl font-bold tracking-tight text-orange-500 ml-1">하이러닝</span>
+        </div>
+
+        <!-- 우측 상단 버튼들 -->
+        <div class="hidden md:flex gap-3">
+            <a href="https://hi.goe.go.kr" target="_blank" class="btn-navy px-5 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 shadow-sm">
+                <i data-lucide="bell" class="w-4 h-4"></i>
+                공지사항 바로보기
+            </a>
+            <a href="https://hi.goe.go.kr/tutorial/index.html" target="_blank" class="btn-navy px-5 py-2.5 rounded-xl font-medium text-sm flex items-center gap-2 shadow-sm">
+                <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                하이러닝 둘러보기
+            </a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 영역 -->
+    <main class="flex-grow flex flex-col justify-center items-center w-full px-4 relative z-10 -mt-10">
+        
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center py-12 md:py-20">
+            
+            <!-- 좌측 텍스트 영역 -->
+            <div class="space-y-6 text-center lg:text-left px-4 lg:px-12">
+                <h2 class="text-xl md:text-2xl font-bold text-slate-800 tracking-tight">
+                    내가 주인공인 학습의 시작
+                </h2>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                    경기도교육청 <br class="hidden lg:block"/>하이러닝 연수
+                </h1>
+                <p class="text-slate-500 text-base md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mt-4 break-keep">
+                    AI 기반의 맞춤형 진단 · 콘텐츠 추천 학습 등을 제공하는<br class="hidden md:block"/>
+                    에듀테크 기반의 미래형 교육을 지원하는 플랫폼,<br class="hidden md:block"/>
+                    선생님들을 위한 활용 연수에 오신 것을 환영합니다.
+                </p>
+            </div>
+
+            <!-- 우측 장식 영역 (3D 일러스트 느낌의 떠있는 요소들) -->
+            <div class="relative hidden lg:flex justify-center items-center h-96">
+                <!-- 둥근 부드러운 형태의 장식들 -->
+                <div class="absolute w-64 h-64 bg-blue-100 rounded-[3rem] rotate-12 shadow-lg backdrop-blur-sm opacity-60"></div>
+                <div class="absolute w-48 h-48 bg-indigo-50 rounded-full -translate-x-20 -translate-y-12 shadow-sm border border-white"></div>
+                <div class="absolute flex flex-col items-center justify-center space-y-4 z-10 w-72 h-48 bg-white/40 backdrop-blur-md rounded-2xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] translate-x-12 translate-y-8">
+                    <i data-lucide="sparkles" class="w-12 h-12 text-blue-500"></i>
+                    <p class="font-bold text-slate-700 text-lg">AI 미래 교육</p>
+                </div>
+                <!-- 작은 장식 요소들 -->
+                <div class="absolute w-12 h-12 bg-pink-400 rounded-xl rotate-45 -translate-y-32 translate-x-32 shadow-md"></div>
+                <div class="absolute w-8 h-8 bg-yellow-400 rounded-full translate-y-32 -translate-x-24 shadow-md"></div>
+            </div>
+        </div>
+
+        <!-- 하단 바로가기 카드 (이미지의 하단 로그인 박스 형태 모방) -->
+        <div class="w-full max-w-5xl px-4 pb-20">
+            <div class="glass-panel rounded-[2rem] p-4 md:p-6 flex flex-col md:flex-row items-center justify-between gap-6 w-full border border-white">
+                
+                <div class="flex items-center gap-3 pl-4">
+                    <div class="bg-blue-100 p-2.5 rounded-full">
+                        <i data-lucide="play" class="w-5 h-5 text-blue-600 ml-0.5"></i>
+                    </div>
+                    <span class="text-xl font-bold text-slate-800 whitespace-nowrap">연수 바로가기</span>
+                </div>
+
+                <!-- 링크 버튼 그룹 -->
+                <div class="flex flex-col sm:flex-row w-full md:w-auto gap-3">
+                    
+                    <!-- 1. 교안 사본 -->
+                    <a href="https://docs.google.com/presentation/d/1Mr9Hq8DArotjhK-YYofU5Yc2yI--QhIhDwh4OsN1CiE/copy" target="_blank" 
+                       class="flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors w-full sm:w-auto text-sm md:text-base border border-indigo-100/50 shadow-sm">
+                        <i data-lucide="file-copy" class="w-4 h-4"></i>
+                        교안 사본 만들기
+                    </a>
+
+                    <!-- 2. 게스트 수업 참여 (강사님이 이 부분의 href="#" 를 실제 링크로 수정하시면 됩니다) -->
+                    <!-- ==================================================================================== -->
+                    <a href="#" target="_blank" 
+                       class="flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-md hover:shadow-lg w-full sm:w-auto text-sm md:text-base transform hover:-translate-y-0.5">
+                        <i data-lucide="users" class="w-4 h-4"></i>
+                        실습방 입장하기
+                    </a>
+                    <!-- ==================================================================================== -->
+
+                    <!-- 3. 포털 링크 -->
+                    <a href="https://hi.goe.go.kr" target="_blank" 
+                       class="flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold bg-slate-50 text-slate-600 hover:bg-slate-100 transition-colors w-full sm:w-auto text-sm md:text-base border border-slate-200 shadow-sm">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        하이러닝 홈
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 아이콘 렌더링 스크립트 -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
